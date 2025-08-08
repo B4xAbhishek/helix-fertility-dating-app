@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, Animated, Dimensions } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { View, Text, StyleSheet, Animated, Dimensions, Image } from 'react-native';
 import { PRIMARY_COLOR, WHITE } from '../assets/styles';
 
 const { width, height } = Dimensions.get('window');
@@ -56,18 +55,11 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
           }
         ]}
       >
-        <View style={styles.heartContainer}>
-          <Ionicons name="heart" size={80} color={WHITE} />
-          <View style={styles.helixContainer}>
-            <View style={styles.helixStrand} />
-            <View style={styles.helixStrand} />
-            <View style={styles.helixRungs}>
-              {[...Array(8)].map((_, i) => (
-                <View key={i} style={styles.helixRung} />
-              ))}
-            </View>
-          </View>
-        </View>
+        <Image 
+          source={require('../assets/logo.jpeg')}
+          style={styles.logoImage}
+          resizeMode="contain"
+        />
       </Animated.View>
       
       <Animated.View style={[styles.textContainer, { opacity: textOpacity }]}>
@@ -90,37 +82,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 40,
   },
-  heartContainer: {
-    position: 'relative',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  helixContainer: {
-    position: 'absolute',
-    width: 60,
-    height: 80,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  helixStrand: {
-    position: 'absolute',
-    width: 2,
-    height: 60,
-    backgroundColor: WHITE,
-    borderRadius: 1,
-  },
-  helixRungs: {
-    position: 'absolute',
-    width: 40,
-    height: 60,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  helixRung: {
-    width: 30,
-    height: 2,
-    backgroundColor: WHITE,
-    borderRadius: 1,
+  logoImage: {
+    width: 200,
+    height: 200,
   },
   textContainer: {
     alignItems: 'center',
