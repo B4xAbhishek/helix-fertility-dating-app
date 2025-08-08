@@ -52,16 +52,19 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
           {
             opacity: logoOpacity,
             transform: [{ scale: logoScale }],
+            backgroundColor: 'transparent',
           }
         ]}
       >
-        <Image 
-          source={require('../assets/logo.png')}
-          style={styles.logoImage}
-          resizeMode="contain"
-          onError={(error) => console.log('Image loading error:', error)}
-          onLoad={() => console.log('Image loaded successfully')}
-        />
+        <View style={styles.logoWrapper}>
+          <Image 
+            source={require('../assets/logo.png')}
+            style={styles.logoImage}
+            resizeMode="contain"
+            onError={(error) => console.log('Image loading error:', error)}
+            onLoad={() => console.log('Image loaded successfully')}
+          />
+        </View>
       </Animated.View>
       
       <Animated.View style={[styles.textContainer, { opacity: textOpacity }]}>
@@ -83,9 +86,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 40,
   },
+  logoWrapper: {
+    backgroundColor: 'transparent',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: 'rgba(0,0,0,0.3)',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 5,
+  },
   logoImage: {
-    width: 250,
-    height: 250,
+    width: 280,
+    height: 280,
+    backgroundColor: 'transparent',
+    tintColor: WHITE,
   },
   textContainer: {
     alignItems: 'center',
