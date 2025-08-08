@@ -236,6 +236,15 @@ const Onboarding = ({ onComplete }: OnboardingProps) => {
     }));
   };
 
+  // Helper function to format option text with proper casing and spacing
+  const formatOptionText = (option: string): string => {
+    // Handle camelCase options by adding spaces before capital letters
+    return option
+      .replace(/([A-Z])/g, ' $1') // Add space before capital letters
+      .replace(/^./, str => str.toUpperCase()) // Capitalize first letter
+      .trim(); // Remove any leading/trailing spaces
+  };
+
   const renderField = (field: OnboardingField) => {
     const value = formData[field.id];
 
@@ -280,7 +289,7 @@ const Onboarding = ({ onComplete }: OnboardingProps) => {
                     localStyles.optionText,
                     value === option && localStyles.selectedOptionText,
                   ]}>
-                    {option}
+                    {formatOptionText(option)}
                   </Text>
                 </TouchableOpacity>
               ))}
@@ -315,7 +324,7 @@ const Onboarding = ({ onComplete }: OnboardingProps) => {
                     localStyles.optionText,
                     selectedValues.includes(option) && localStyles.selectedOptionText,
                   ]}>
-                    {option}
+                    {formatOptionText(option)}
                   </Text>
                 </TouchableOpacity>
               ))}

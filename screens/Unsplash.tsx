@@ -9,6 +9,7 @@ import {
   ActivityIndicator,
   Animated,
   PanResponder,
+  ScrollView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import * as Haptics from "expo-haptics";
@@ -171,6 +172,16 @@ const Unsplash = () => {
     handleSwipe('left');
   };
 
+  const handleStar = () => {
+    // Handle star action
+    console.log("Star action");
+  };
+
+  const handleFlash = () => {
+    // Handle flash action
+    console.log("Flash action");
+  };
+
   const renderProfileInfo = (profile: DataT) => {
     return (
       <View style={styles.profileInfoContainer}>
@@ -324,19 +335,23 @@ const Unsplash = () => {
 
   return (
     <View style={styles.container}>
+      {/* Header */}
       <View style={styles.header}>
-        <View style={styles.logoContainer}>
-          <Ionicons name="heart" size={24} color={PRIMARY_COLOR} />
-          <Text style={styles.logoText}>helix</Text>
-        </View>
+        <TouchableOpacity style={styles.locationButton}>
+          <Ionicons name="location" size={20} color={BLACK} />
+          <Text style={styles.locationText}>New York</Text>
+        </TouchableOpacity>
+        
         <TouchableOpacity 
           style={styles.filterButton}
           onPress={() => setFiltersVisible(true)}
         >
-          <Ionicons name="menu" size={24} color={BLACK} />
+          <Ionicons name="options" size={20} color={BLACK} />
+          <Text style={styles.filterText}>Filters</Text>
         </TouchableOpacity>
       </View>
 
+      {/* Main Card Container */}
       <View style={styles.cardContainer}>
         <Animated.View 
           style={[styles.card, cardStyle]}
@@ -347,6 +362,12 @@ const Unsplash = () => {
             style={styles.cardImage}
             resizeMode="cover"
           />
+          
+          {/* Match Percentage Badge */}
+          <View style={styles.matchBadge}>
+            <Ionicons name="heart" size={16} color={WHITE} />
+            <Text style={styles.matchText}>78% Match!</Text>
+          </View>
           
           {/* Like Overlay */}
           <Animated.View style={[localStyles.overlay, localStyles.likeOverlay, { opacity: likeOpacity }]}>
@@ -365,29 +386,43 @@ const Unsplash = () => {
           </Animated.View>
           
           <View style={styles.cardOverlay}>
-            {renderProfileInfo(currentProfile)}
-            
-            <Text style={styles.bioText}>
-              {currentProfile.description}
-            </Text>
+            <ScrollView 
+              style={styles.scrollContainer}
+              showsVerticalScrollIndicator={false}
+              contentContainerStyle={styles.scrollContent}
+            >
+              <Text style={styles.nameText}>
+                {currentProfile.name}
+              </Text>
+            </ScrollView>
           </View>
         </Animated.View>
       </View>
 
+      {/* Description below the image */}
+      {currentProfile.description && (
+        <View style={styles.descriptionContainer}>
+          <Text style={styles.descriptionText}>{currentProfile.description}</Text>
+        </View>
+      )}
+
+      {/* Action Buttons */}
       <View style={styles.actionButtons}>
-        <TouchableOpacity style={styles.dislikeButton} onPress={handleDislike}>
-          <Ionicons name="close" size={30} color="#1e2b8a" />
+        <TouchableOpacity style={styles.actionButton} onPress={handleStar}>
+          <Ionicons name="star" size={24} color="#FFA200" />
         </TouchableOpacity>
         
-        <TouchableOpacity style={styles.likeButton} onPress={handleLike}>
-          <Ionicons name="heart" size={30} color={WHITE} />
+        <TouchableOpacity style={styles.actionButton} onPress={handleLike}>
+          <Ionicons name="heart" size={24} color="#B644B2" />
         </TouchableOpacity>
-      </View>
-
-      <View style={styles.progressContainer}>
-        <Text style={styles.progressText}>
-          {currentIndex + 1} of {profiles.length}
-        </Text>
+        
+        <TouchableOpacity style={styles.actionButton} onPress={handleDislike}>
+          <Ionicons name="close" size={24} color={BLACK} />
+        </TouchableOpacity>
+        
+        <TouchableOpacity style={styles.actionButton} onPress={handleFlash}>
+          <Ionicons name="flash" size={24} color="#5028D7" />
+        </TouchableOpacity>
       </View>
 
       <Filters
@@ -462,21 +497,31 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 20,
-    paddingTop: 50,
+    paddingTop: 60,
     paddingBottom: 20,
+    backgroundColor: WHITE,
   },
-  logoContainer: {
+  locationButton: {
     flexDirection: "row",
     alignItems: "center",
+    padding: 8,
   },
-  logoText: {
-    fontSize: 24,
-    fontWeight: "bold",
+  locationText: {
+    fontSize: 16,
     color: BLACK,
-    marginLeft: 8,
+    marginLeft: 4,
+    fontWeight: "500",
   },
   filterButton: {
+    flexDirection: "row",
+    alignItems: "center",
     padding: 8,
+  },
+  filterText: {
+    fontSize: 16,
+    color: BLACK,
+    marginLeft: 4,
+    fontWeight: "500",
   },
   cardContainer: {
     flex: 1,
@@ -498,13 +543,37 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
+  matchBadge: {
+    position: "absolute",
+    bottom: 120,
+    left: 20,
+    backgroundColor: "#B644B2",
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+  },
+  matchText: {
+    color: WHITE,
+    fontSize: 14,
+    fontWeight: "bold",
+    marginLeft: 4,
+  },
   cardOverlay: {
     position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: "rgba(0,0,0,0.3)",
+    backgroundColor: "rgba(0,0,0,0.7)",
     padding: 20,
+    maxHeight: "60%",
+  },
+  scrollContainer: {
+    flex: 1,
+  },
+  scrollContent: {
+    paddingBottom: 20,
   },
   profileInfoContainer: {
     flexDirection: "row",
@@ -529,6 +598,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: WHITE,
     marginLeft: 6,
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   verifiedBadge: {
     flexDirection: "row",
@@ -542,11 +614,39 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: WHITE,
     marginLeft: 4,
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  nameText: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: WHITE,
+    marginBottom: 8,
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   bioText: {
     fontSize: 16,
     color: WHITE,
     lineHeight: 22,
+    marginBottom: 15,
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  additionalInfo: {
+    marginTop: 10,
+  },
+  additionalText: {
+    fontSize: 14,
+    color: WHITE,
+    lineHeight: 20,
+    marginBottom: 12,
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   actionButtons: {
     flexDirection: "row",
@@ -555,10 +655,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     paddingVertical: 30,
   },
-  dislikeButton: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+  actionButton: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
     backgroundColor: WHITE,
     justifyContent: "center",
     alignItems: "center",
@@ -568,26 +668,47 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
   },
-  likeButton: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    backgroundColor: PRIMARY_COLOR,
-    justifyContent: "center",
+  bottomNavigation: {
+    flexDirection: "row",
+    justifyContent: "space-around",
     alignItems: "center",
-    elevation: 5,
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    backgroundColor: WHITE,
+    borderTopWidth: 1,
+    borderTopColor: "#E5E7EB",
+  },
+  navItem: {
+    alignItems: "center",
+  },
+  navText: {
+    fontSize: 10,
+    color: BLACK,
+    marginTop: 4,
+    fontWeight: "500",
+  },
+  activeNavText: {
+    color: "#B644B2",
+  },
+  descriptionContainer: {
+    marginHorizontal: 20,
+    marginTop: 15,
+    paddingHorizontal: 15,
+    paddingVertical: 15,
+    backgroundColor: WHITE,
+    borderRadius: 12,
+    elevation: 2,
     shadowColor: BLACK,
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
   },
-  progressContainer: {
-    alignItems: "center",
-    paddingBottom: 20,
-  },
-  progressText: {
-    fontSize: 14,
+  descriptionText: {
+    fontSize: 16,
     color: DARK_GRAY,
+    lineHeight: 22,
+    textAlign: "center",
+    fontStyle: "italic",
   },
 });
 
