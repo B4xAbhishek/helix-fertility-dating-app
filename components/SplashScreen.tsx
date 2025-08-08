@@ -56,14 +56,15 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
         ]}
       >
         <Image 
-          source={require('../assets/logo.jpeg')}
+          source={require('../assets/logo.png')}
           style={styles.logoImage}
           resizeMode="contain"
+          onError={(error) => console.log('Image loading error:', error)}
+          onLoad={() => console.log('Image loaded successfully')}
         />
       </Animated.View>
       
       <Animated.View style={[styles.textContainer, { opacity: textOpacity }]}>
-        <Text style={styles.appName}>helix</Text>
         <Text style={styles.tagline}>Connect with purpose</Text>
       </Animated.View>
     </View>
@@ -83,8 +84,8 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   logoImage: {
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
   },
   textContainer: {
     alignItems: 'center',
@@ -96,9 +97,10 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   tagline: {
-    fontSize: 16,
+    fontSize: 18,
     color: WHITE,
-    opacity: 0.8,
+    opacity: 0.9,
+    fontWeight: '500',
   },
 });
 
