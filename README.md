@@ -1,120 +1,241 @@
-<h1 align="center">
-<img
-		width="250"
-		alt="Tinder Clone - Expo"
-		src="https://github.com/stevenpersia/tinder-expo/blob/master/preview/tinder-clone-logo.gif">
-</h1>
-<h3 align="center">
-	Tinder Clone - Expo
-</h3>
+# 🧬 Helix - Fertility-Aware Dating App
 
-<p align="center">
-	<img src="https://github.com/stevenpersia/tinder-expo/blob/master/preview/tinderclone-preview.gif" width="300">
-</p>
+A revolutionary dating platform that combines traditional dating features with fertility awareness, genetic compatibility, and reproductive intent matching.
 
+![Helix App](preview/tinderclone-preview.gif)
 
-## Overview
+## 🌟 Features
 
-⚠️ **This project use code of my previous repository [Tinder - React Native](https://github.com/stevenpersia/tinder-react-native). Because I don't have time to maintain this previous project made on React Native, I've decided to switch to Expo because it's more convenient to me. Sorry if you don't work with Expo (but give it a try).**
+### 💕 Fertility-Aware Matching
+- **Reproductive Intent**: Specify what you're looking for (egg/sperm donors, co-parenting, relationships)
+- **Genetic Compatibility**: Blood type, recessive carrier traits, fertility indicators
+- **Donor Matching**: Egg/sperm donor preferences and seeking donors
+- **Co-Parenting Support**: Interest in co-parenting arrangements
 
-**Perfect to start an Tinder Clone app.** 4 screens are availables : Explore, Matches, Messages and Profile. You'll find some components like Card Component to pass props and variant. No frameworks UI like Bootstrap or Material UI are used.
+### 🎯 Professional Dating Features
+- **Smooth Swiping**: Tinder-like card swiping with haptic feedback
+- **Like/Dislike Overlays**: Visual feedback with "LIKE" and "NOPE" overlays
+- **Advanced Filters**: Comprehensive filtering for fertility and lifestyle preferences
+- **Professional UI**: Clean, modern interface with smooth animations
 
-- **Easy to use** 🤘
-- **Made with Expo** ⚡
-- **TypeScript supported** 🌞
+### 📱 Enhanced User Experience
+- **6-Step Onboarding**: Comprehensive profile setup with fertility questions
+- **Real-time Chat**: Professional messaging interface
+- **Profile Verification**: ID verification badges
+- **Notification System**: Smart notifications for matches and messages
 
-This project was inspired by this [amazing Kishore's work on Dribbble](https://dribbble.com/shots/5631075-Dating-App-Sketch-Freebie-Day-334-365-Project365). Feel free to follow this guy because he does great stuff.
+## 🚀 Quick Start
 
-## Demo
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- Expo CLI: `npm install -g @expo/cli`
+- EAS CLI: `npm install -g @expo/eas-cli`
 
-You can try it here : https://expo.io/@stevenpersia/projects/tinder-expo
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/B4xAbhishek/helix-fertility-dating-app.git
+cd helix-fertility-dating-app
 
-## Screenshots
+# Install dependencies
+npm install
 
-<img
-width="205"
-alt="Capture 1"
-src="https://github.com/stevenpersia/tinder-expo/blob/master/preview/capture-1.png">
-<img
-width="205"
-alt="Capture 2"
-src="https://github.com/stevenpersia/tinder-expo/blob/master/preview/capture-2.png">
-<img
-width="205"
-alt="Capture 3"
-src="https://github.com/stevenpersia/tinder-expo/blob/master/preview/capture-3.png">
-<img
-width="205"
-alt="Capture 4"
-src="https://github.com/stevenpersia/tinder-expo/blob/master/preview/capture-4.png">
-
-
-## Installation and usage
-
-Be sure, you have installed all dependencies and applications to run Expo project on your computer : [Getting Started with Expo](https://docs.expo.io/get-started/installation/).
-
-This project works fine on iOS and Android.
-
-
-### Running the project
-
-Clone this repository :
-
-```
-git clone https://github.com/stevenpersia/tinder-expo.git
-cd tinder-expo
+# Start the development server
+npm start
 ```
 
-Install packages :
+### Running the App
+```bash
+# Run on Android
+npm run android
+
+# Run on iOS
+npm run ios
+
+# Run on web
+npm run web
+```
+
+## 🏗️ Building APK
+
+### Local Build
+```bash
+# Build Android APK locally
+npm run build:android
+
+# Build iOS locally
+npm run ios
+
+# Build both platforms locally
+npm run build:all
+```
+
+### Cloud Build
+```bash
+# Build Android APK in cloud
+npm run build:android-cloud
+
+# Build iOS in cloud
+npm run build:ios-cloud
+
+# Build both platforms in cloud
+npm run build:all-cloud
+```
+
+## 📱 App Screenshots
+
+### Main Profile Screen
+- Professional card-based design
+- Comprehensive profile information
+- Fertility-aware matching indicators
+- Smooth swiping animations
+
+### Chat Interface
+- Modern messaging design
+- Match notifications
+- Opening moves suggestions
+- Real-time chat status
+
+### Onboarding Flow
+- 6-step comprehensive setup
+- Fertility preference collection
+- Genetic compatibility data
+- Lifestyle and family planning
+
+## 🛠️ Technology Stack
+
+- **React Native**: Cross-platform mobile development
+- **Expo**: Development platform and tools
+- **TypeScript**: Type-safe JavaScript
+- **React Navigation**: Navigation between screens
+- **Expo Haptics**: Tactile feedback
+- **EAS Build**: Cloud build service
+
+## 📋 Project Structure
 
 ```
-yarn
+mobile/
+├── assets/              # Images, icons, and static files
+├── components/          # Reusable UI components
+├── screens/            # App screens and navigation
+├── scripts/            # Build and utility scripts
+├── types.ts            # TypeScript type definitions
+├── App.tsx             # Main app component
+├── app.json            # Expo configuration
+├── eas.json            # EAS build configuration
+└── package.json        # Dependencies and scripts
 ```
 
-When installation is complete, run it :
+## 🔧 Development
 
+### Available Scripts
+```bash
+npm start              # Start development server
+npm run android        # Run on Android
+npm run ios           # Run on iOS
+npm run web           # Run on web
+npm run fix           # Fix common issues
+npm run clean         # Clear cache and restart
+npm run test          # Test production build
 ```
-yarn start
+
+### Build Commands
+```bash
+npm run build:android      # Build Android APK locally
+npm run build:ios         # Build iOS locally
+npm run build:all         # Build both platforms locally
+npm run preview           # Build preview APK
+npm run submit:android    # Submit to Play Store
+npm run submit:ios        # Submit to App Store
 ```
 
+## 🎨 Design Features
 
-## Props
+### Professional UI/UX
+- **Modern Design**: Clean, professional interface
+- **Smooth Animations**: Tinder-like card transitions
+- **Haptic Feedback**: Tactile responses for interactions
+- **Color Scheme**: Warm red/pink theme (#FF6B6B)
+- **Typography**: Clear, readable fonts
 
-### CardItem
+### Enhanced Interactions
+- **Pan Gestures**: Natural card swiping
+- **Visual Overlays**: Like/dislike feedback
+- **Threshold-based Actions**: 120px swipe threshold
+- **Button Integration**: Heart and X buttons
 
-| Name           | Type     | Required | Description                                               | Example                                             |
-| -------------- | -------- | -------- | --------------------------------------------------------- | --------------------------------------------------- |
-| `image`        | string   | Yes      | Picture of member.                                        | `image="https://..."`                               |
-| `name`         | string   | Yes      | Name of member.                                           | `name="John Doe"`                                   |
-| `description`  | string   | Yes      | Description of member.                                    | `description="Full-time Traveller. Globe Trotter."` |
-| `matches`      | string   | Yes      | Match percentage.                                         | `matches="95"`                                      |
-| `hasActions`   | boolean  | No       | Display actions buttons (Like, Dislike, ...).             | `actions`                                           |
-| `isOnline`     | string   | No       | Display online or offline badge (`Online` and `Offline`). | `status="Online"`                                   |
-| `hasVariant`   | boolean  | No       | Display another style of card (used for Matches screen).  | `variant`                                           |
+## 📊 Fertility Features
 
-### Message
+### Reproductive Intent
+- Searching for egg/sperm donors
+- Looking for co-parenting partners
+- Relationship and marriage goals
+- Direct donor vs. donor bank preferences
 
-| Name          | Type   | Required | Description             | Example                                                                                      |
-| ------------- | ------ | -------- | ----------------------- | -------------------------------------------------------------------------------------------- |
-| `image`       | string | Yes      | Picture of member.      | `image="https://..."`                                                                        |
-| `name`        | string | Yes      | Name of member.         | `name="John Doe"`                                                                            |
-| `lastMessage` | string | Yes      | Last message of member. | `lastMessage="You want order in Gotham. Batman must take off his mask and turn himself in."` |
+### Genetic Compatibility
+- Blood type matching
+- Recessive carrier traits
+- Fertility indicators
+- Family history considerations
 
+### Donor Preferences
+- Egg donor matching
+- Sperm donor matching
+- Co-parenting interest
+- Seeking donor preferences
 
-### ProfileItem
+## 🚨 Troubleshooting
 
-| Name       | Type   | Required | Description                 | Example                                    |
-| ---------- | ------ | -------- | --------------------------- | ------------------------------------------ |
-| `name`     | string | Yes      | Name of member.             | `name="John Doe"`                          |
-| `matches`  | string | Yes      | Match percentage.           | `matches="95"`                             |
-| `age`      | string | No       | Age of member.              | `age="25"`                                 |
-| `location` | string | No       | Location of member.         | `location="Paris, France"`                 |
-| `info1`    | string | No       | More information of member. | `info1="Straight, Single"`                 |
-| `info2`    | string | No       | More information of member. | `info2="Tea Totaller & Loves Photography"` |
-| `info3`    | string | No       | More information of member. | `info3="Beaches, Mountain & Coffee"`       |
-| `info4`    | string | No       | More information of member. | `info4="Last seen: 23h ago"`               |
+### Common Issues
+```bash
+# Fix common issues
+npm run fix
 
+# Clear cache and restart
+npm run clean
 
-## Star, Fork, Clone & Contribute
+# Check dependencies
+npm list --depth=0
+```
 
-Feel free to contribute on this repository. If my work helps you, please give me back with a star. This means a lot to me and keeps me going!
+### Build Issues
+- Ensure Android Studio is installed for local builds
+- Check that ANDROID_HOME is set
+- Use cloud builds if local setup fails
+- See `TROUBLESHOOTING.md` for detailed solutions
+
+## 📄 Documentation
+
+- [Build Instructions](BUILD_INSTRUCTIONS.md) - Detailed build guide
+- [Troubleshooting](TROUBLESHOOTING.md) - Common issues and solutions
+- [API Documentation](docs/api.md) - Backend integration guide
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with React Native and Expo
+- Inspired by modern dating apps like Tinder, Bumble, and Hinge
+- Designed for fertility-aware communities and reproductive health
+
+## 📞 Support
+
+For support and questions:
+- Create an issue in this repository
+- Check the troubleshooting guide
+- Review the build instructions
+
+---
+
+**Made with ❤️ for fertility-aware communities**
