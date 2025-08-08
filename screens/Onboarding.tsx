@@ -330,7 +330,7 @@ const Onboarding = ({ onComplete }: OnboardingProps) => {
             <Switch
               value={value}
               onValueChange={(val) => handleFieldChange(field.id, val)}
-              trackColor={{ false: "#E5E5E5", true: "#FF6B6B" }}
+              trackColor={{ false: "#E5E5E5", true: "#1e2b8a" }}
               thumbColor={value ? "#FFFFFF" : "#FFFFFF"}
             />
           </View>
@@ -407,7 +407,7 @@ const Onboarding = ({ onComplete }: OnboardingProps) => {
           {/* Icon and Title */}
           <View style={localStyles.titleContainer}>
             <View style={localStyles.iconContainer}>
-              <Ionicons name={currentStepData.icon as any} color="#FF6B6B" size={32} />
+              <Ionicons name={currentStepData.icon as any} color="#1e2b8a" size={32} />
             </View>
             <Text style={localStyles.title}>{currentStepData.title}</Text>
             <Text style={localStyles.subtitle}>{currentStepData.subtitle}</Text>
@@ -425,7 +425,7 @@ const Onboarding = ({ onComplete }: OnboardingProps) => {
       <View style={localStyles.footer}>
         {currentStep > 0 && (
           <TouchableOpacity style={localStyles.backButton} onPress={handleBack}>
-            <Ionicons name="arrow-back" color="#FF6B6B" size={20} />
+            <Ionicons name="arrow-back" color="#1e2b8a" size={20} />
             <Text style={localStyles.backButtonText}>Back</Text>
           </TouchableOpacity>
         )}
@@ -471,7 +471,7 @@ const localStyles = StyleSheet.create({
   },
   progressFill: {
     height: 4,
-    backgroundColor: "#FF6B6B",
+    backgroundColor: "#1e2b8a",
     borderRadius: 2,
   },
   content: {
@@ -524,7 +524,7 @@ const localStyles = StyleSheet.create({
     marginBottom: 12,
   },
   required: {
-    color: "#FF6B6B",
+    color: "#1e2b8a",
   },
   input: {
     borderWidth: 1,
@@ -551,8 +551,8 @@ const localStyles = StyleSheet.create({
     alignItems: "center",
   },
   selectedOption: {
-    backgroundColor: "#FF6B6B",
-    borderColor: "#FF6B6B",
+    backgroundColor: "#1e2b8a",
+    borderColor: "#1e2b8a",
   },
   optionText: {
     fontSize: 14,
@@ -594,19 +594,19 @@ const localStyles = StyleSheet.create({
   },
   backButtonText: {
     fontSize: 16,
-    color: "#FF6B6B",
+    color: "#1e2b8a",
     fontWeight: "600",
     marginLeft: 8,
   },
   nextButton: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#FF6B6B",
+    backgroundColor: "#1e2b8a",
     paddingHorizontal: 32,
     paddingVertical: 16,
     borderRadius: 25,
     elevation: 3,
-    shadowColor: "#FF6B6B",
+    shadowColor: "#1e2b8a",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 4,

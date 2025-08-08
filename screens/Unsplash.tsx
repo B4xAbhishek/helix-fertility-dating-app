@@ -236,7 +236,7 @@ const Unsplash = () => {
 
           {profile.reproductiveIntent && (
             <View style={styles.infoRow}>
-              <Ionicons name="heart" color="#FF6B6B" size={16} />
+              <Ionicons name="heart" color="#1e2b8a" size={16} />
               <Text style={styles.infoText}>
                 Looking for {profile.reproductiveIntent.searchingFor} donor for {profile.reproductiveIntent.lookingFor}
               </Text>
@@ -376,7 +376,7 @@ const Unsplash = () => {
 
       <View style={styles.actionButtons}>
         <TouchableOpacity style={styles.dislikeButton} onPress={handleDislike}>
-          <Ionicons name="close" size={30} color="#FF3B30" />
+          <Ionicons name="close" size={30} color="#1e2b8a" />
         </TouchableOpacity>
         
         <TouchableOpacity style={styles.likeButton} onPress={handleLike}>

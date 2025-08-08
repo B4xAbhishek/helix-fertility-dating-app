@@ -68,7 +68,7 @@ const CustomTabBar = ({ state, descriptors, navigation }: CustomTabBarProps) => 
               <Ionicons
                 name={iconName as any}
                 size={24}
-                color={isFocused ? "#FF6B6B" : DARK_GRAY}
+                color={isFocused ? "#1e2b8a" : DARK_GRAY}
               />
               {notificationCount && (
                 <View style={styles.notificationBadge}>
@@ -110,14 +110,14 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   activeTabLabel: {
-    color: "#FF6B6B",
+    color: "#1e2b8a",
     fontWeight: "600",
   },
   notificationBadge: {
     position: "absolute",
     top: -5,
     right: -8,
-    backgroundColor: "#FF3B30",
+    backgroundColor: "#1e2b8a",
     borderRadius: 8,
     minWidth: 16,
     height: 16,
