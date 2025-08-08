@@ -6,6 +6,24 @@ export type CardItemT = {
   isOnline?: boolean;
   matches?: string;
   name: string;
+  age?: string;
+  job?: string;
+  education?: string;
+  topics?: string[];
+  // Fertility-aware features
+  reproductiveIntent?: Record<string, any>;
+  geneticTraits?: Record<string, any>;
+  donorPreferences?: Record<string, any>;
+  children?: Record<string, any>;
+  location?: string;
+  height?: string;
+  religion?: string;
+  smoking?: boolean;
+  drinking?: string;
+  drugs?: boolean;
+  datingIntent?: string;
+  // Additional profile fields
+  [key: string]: any;
 };
 
 export type IconT = {
@@ -47,9 +65,25 @@ export type DataT = {
   message: string;
   image: any;
   age?: string;
+  job?: string;
+  education?: string;
+  topics?: string[];
   info1?: string;
   info2?: string;
   info3?: string;
   info4?: string;
   location?: string;
+  // Fertility-aware features
+  reproductiveIntent?: Record<string, any>;
+  geneticTraits?: Record<string, any>;
+  donorPreferences?: Record<string, any>;
+  children?: Record<string, any>;
+  height?: string;
+  religion?: string;
+  smoking?: boolean;
+  drinking?: string;
+  drugs?: boolean;
+  datingIntent?: string;
+  // Additional profile fields
+  [key: string]: any;
 };

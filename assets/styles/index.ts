@@ -1,11 +1,13 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-export const PRIMARY_COLOR = "#7444C0";
-export const SECONDARY_COLOR = "#5636B8";
+export const PRIMARY_COLOR = "#1e3a8a";
+export const SECONDARY_COLOR = "#1e40af";
 export const WHITE = "#FFFFFF";
 export const GRAY = "#757E90";
 export const DARK_GRAY = "#363636";
 export const BLACK = "#000000";
+export const LIGHT_GRAY = "#f3f4f6";
+export const BORDER_GRAY = "#e5e7eb";
 
 export const ONLINE_STATUS = "#46A575";
 export const OFFLINE_STATUS = "#D04949";
@@ -30,6 +32,118 @@ export default StyleSheet.create({
     shadowRadius: 10,
     shadowColor: BLACK,
     shadowOffset: { height: 0, width: 0 },
+  },
+
+  // COMPONENT - BUMBLE CARD
+  containerBumbleCard: {
+    backgroundColor: WHITE,
+    borderRadius: 12,
+    margin: 20,
+    marginBottom: 10,
+    elevation: 2,
+    shadowOpacity: 0.1,
+    shadowRadius: 15,
+    shadowColor: BLACK,
+    shadowOffset: { height: 5, width: 0 },
+  },
+  profileInfoContainer: {
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+  },
+  verificationBadge: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#E3F2FD",
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 12,
+    alignSelf: "flex-start",
+    marginBottom: 8,
+  },
+  verificationText: {
+    color: "#007AFF",
+    fontSize: 12,
+    fontWeight: "600",
+    marginLeft: 4,
+  },
+  nameText: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: DARK_GRAY,
+    marginBottom: 8,
+  },
+  infoRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 6,
+  },
+  infoText: {
+    color: DARK_GRAY,
+    fontSize: 14,
+    marginLeft: 8,
+  },
+  actionButtonsContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 20,
+    paddingHorizontal: 20,
+  },
+  miniActionButton: {
+    width: 45,
+    height: 45,
+    borderRadius: 22.5,
+    backgroundColor: WHITE,
+    alignItems: "center",
+    justifyContent: "center",
+    elevation: 2,
+    shadowOpacity: 0.15,
+    shadowRadius: 10,
+    shadowColor: DARK_GRAY,
+    shadowOffset: { height: 2, width: 0 },
+  },
+  mainActionButton: {
+    width: 55,
+    height: 55,
+    borderRadius: 27.5,
+    backgroundColor: WHITE,
+    alignItems: "center",
+    justifyContent: "center",
+    elevation: 2,
+    shadowOpacity: 0.15,
+    shadowRadius: 10,
+    shadowColor: DARK_GRAY,
+    shadowOffset: { height: 2, width: 0 },
+  },
+  topicsContainer: {
+    marginTop: 10,
+  },
+  topicsTitle: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: DARK_GRAY,
+    marginBottom: 10,
+  },
+  topicsList: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
+  topicTag: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: WHITE,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+    marginRight: 8,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: "#E0E0E0",
+  },
+  topicText: {
+    color: DARK_GRAY,
+    fontSize: 12,
+    marginLeft: 4,
   },
   matchesCardItem: {
     marginTop: -35,
@@ -215,6 +329,25 @@ export default StyleSheet.create({
     fontSize: 13,
   },
 
+  // COMPONENT - BUMBLE HEADER
+  bumbleHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    paddingTop: 60,
+    paddingBottom: 20,
+    backgroundColor: WHITE,
+  },
+  bumbleHeaderTitle: {
+    fontSize: 28,
+    fontWeight: "bold",
+    color: DARK_GRAY,
+  },
+  bumbleHeaderButton: {
+    padding: 8,
+  },
+
   // CONTAINER - GENERAL
   bg: {
     flex: 1,
@@ -233,7 +366,8 @@ export default StyleSheet.create({
 
   // CONTAINER - HOME
   containerHome: {
-    marginHorizontal: 10,
+    flex: 1,
+    backgroundColor: "#F8F8F8",
   },
 
   // CONTAINER - MATCHES
