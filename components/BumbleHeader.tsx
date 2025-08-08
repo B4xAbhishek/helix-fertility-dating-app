@@ -5,9 +5,12 @@ import styles, { DARK_GRAY } from "../assets/styles";
 
 const BumbleHeader = () => (
   <View style={styles.bumbleHeader}>
-    <Text style={styles.bumbleHeaderTitle}>Bumble</Text>
+    <View style={styles.headerLeft}>
+      <Icon name="heart" size={24} color="#1e2b8a" />
+      <Text style={styles.bumbleHeaderTitle}>helix</Text>
+    </View>
     <TouchableOpacity style={styles.bumbleHeaderButton}>
-      <Icon name="settings" size={24} color={DARK_GRAY} />
+      <Icon name="menu" size={24} color={DARK_GRAY} />
     </TouchableOpacity>
   </View>
 );

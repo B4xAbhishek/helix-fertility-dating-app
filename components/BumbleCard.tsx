@@ -238,6 +238,13 @@ const BumbleCard = ({
 
       {/* SECONDARY CONTENT BELOW THE IMAGE */}
       <View style={[styles.profileInfoContainer, { paddingTop: 12 }]}> 
+        {/* DESCRIPTION */}
+        {description && (
+          <View style={styles.descriptionContainer}>
+            <Text style={styles.descriptionText}>{description}</Text>
+          </View>
+        )}
+
         {/* CONVERSATION TOPICS */}
         {topics && topics.length > 0 && (
           <View style={styles.topicsContainer}>

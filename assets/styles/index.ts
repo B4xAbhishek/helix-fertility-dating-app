@@ -82,6 +82,17 @@ export default StyleSheet.create({
     fontSize: 14,
     marginLeft: 8,
   },
+  descriptionContainer: {
+    marginBottom: 16,
+    paddingHorizontal: 4,
+  },
+  descriptionText: {
+    color: DARK_GRAY,
+    fontSize: 16,
+    lineHeight: 22,
+    textAlign: "center",
+    fontStyle: "italic",
+  },
   actionButtonsContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -338,6 +349,10 @@ export default StyleSheet.create({
     paddingTop: 60,
     paddingBottom: 20,
     backgroundColor: WHITE,
+  },
+  headerLeft: {
+    flexDirection: "row",
+    alignItems: "center",
   },
   bumbleHeaderTitle: {
     fontSize: 28,
